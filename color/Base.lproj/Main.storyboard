@@ -17,24 +17,34 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="5HB-2G-7ek">
-                                <rect key="frame" x="16" y="49" width="100" height="100"/>
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.031585452999999999" blue="0.072907647029999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="R3B-4z-niv">
-                                <rect key="frame" x="204" y="49" width="100" height="100"/>
+                                <rect key="frame" x="204" y="20" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" id="uK5-nf-Nfr">
+                                <rect key="frame" x="16" y="448" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23350471240000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Z7v-70-pTS">
+                                <rect key="frame" x="204" y="448" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98135301740000003" green="1" blue="0.39796615600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="判定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kdz-2X-CnP">
-                                <rect key="frame" x="16" y="233" width="288" height="128"/>
+                                <rect key="frame" x="16" y="220" width="288" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i7N-qG-Ue1">
-                                <rect key="frame" x="104" y="382" width="113" height="21"/>
+                                <rect key="frame" x="104" y="364" width="113" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -46,9 +56,11 @@
                     </view>
                     <connections>
                         <outlet property="blueView" destination="R3B-4z-niv" id="7Wn-aN-Gjp"/>
+                        <outlet property="greenView" destination="uK5-nf-Nfr" id="LOm-LA-nIh"/>
                         <outlet property="redView" destination="5HB-2G-7ek" id="Om7-c5-lnD"/>
                         <outlet property="resultLabel" destination="Kdz-2X-CnP" id="ZHC-gW-X6E"/>
                         <outlet property="scorelabel" destination="i7N-qG-Ue1" id="56N-iI-v44"/>
+                        <outlet property="yellowView" destination="Z7v-70-pTS" id="bY1-y6-aoB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

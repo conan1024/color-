@@ -42,7 +42,7 @@
 }
 
 -(void)random{
-    number=arc4random()%2;
+    number=arc4random()%4;
     
     NSLog(@"%d",number);
     switch (number) {
@@ -51,6 +51,12 @@
             break;
         case 1:
             [self makeblue];
+            break;
+        case 2:
+            [self makegreen];
+            break;
+        case 3:
+            [self makeyellow];
             break;
     }
 }
@@ -130,23 +136,24 @@
     [[UIPanGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(panAction4:)];
     
-    [redsmallView addGestureRecognizer:pan4];
+    [greensmallView addGestureRecognizer:pan4];
 }
 
--(void)makeyello{
-    NSLog(@"make:yello");
-    redsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+-(void)makeyellow{
+    NSLog(@"make:yellow");
+    yellowsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     
-    redsmallView.backgroundColor = [UIColor yelloColor];
+    yellowsmallView.backgroundColor = [UIColor yellowColor];
     
-    [self.view addSubview:redsmallView];
+    [self.view addSubview:yellowsmallView];
     
     UIPanGestureRecognizer *pan5 =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(panAction5:)];
     
-    [redsmallView addGestureRecognizer:pan5];
+    [yellowsmallView addGestureRecognizer:pan5];
 }
+
 
 
 -(void)plusScore{
@@ -154,7 +161,7 @@
     score = score + 100;
     scorelabel.text = [NSString stringWithFormat:@"%d",score];
 }
-
+//赤
 -(void)panAction2:(UIPanGestureRecognizer *)sender
 {
     CGPoint p = [sender translationInView:self.view];
@@ -186,10 +193,23 @@
             NSLog(@"赤:青と重なりました！");
             [redsmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+        }else if(CGRectContainsPoint(greenView.frame,redsmallView.center))
+        {
+            resultLabel.text = @"緑と重なりました";
+            NSLog(@"赤:緑と重なりました！");
+            [redsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+        }else if(CGRectContainsPoint(yellowView.frame,redsmallView.center))
+        {
+            resultLabel.text = @"黄色と重なりました";
+            NSLog(@"赤:黄色と重なりました！");
+            [redsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
         }
     }
 }
 
+//青
 - (void)panAction3:(UIPanGestureRecognizer *)sender
 {
     CGPoint p = [sender translationInView:self.view];
@@ -198,7 +218,7 @@
     
     bluesmallView.center = movedPoint;
     
-    //NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    //NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(mofvedPoint));
     
     [sender setTranslation:CGPointZero inView:self.view];
     
@@ -215,11 +235,121 @@
         }else if(CGRectContainsPoint(blueView.frame, bluesmallView.center))
         {
             resultLabel.text = @"青と重なりました";
-            NSLog(@"青:赤と重なりました！");
+            NSLog(@"青:青と重なりました！");
             [bluesmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
             [self plusScore];
+        }else if(CGRectContainsPoint(greenView.frame,bluesmallView.center))
+        {
+            resultLabel.text = @"緑と重なりました";
+            NSLog(@"青:緑と重なりました！");
+            [bluesmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+        }else if(CGRectContainsPoint(yellowView.frame,bluesmallView.center))
+        {
+            resultLabel.text = @"黄色と重なりました";
+            NSLog(@"青:黄色と重なりました！");
+            [bluesmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
         }
+
+    }
+}
+
+//緑
+- (void)panAction4:(UIPanGestureRecognizer *)sender
+{
+    
+    CGPoint p = [sender translationInView:self.view];
+    
+    CGPoint movedPoint = CGPointMake(greensmallView.center.x + p.x, greensmallView.center.y + p.y);
+    
+    greensmallView.center = movedPoint;
+    
+    NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    
+    [sender setTranslation:CGPointZero inView:self.view];
+    
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        if (CGRectContainsPoint(redView.frame,greensmallView.center))
+            
+        {
+            resultLabel.text = @"赤と重なりました";
+            NSLog(@"緑:赤と重なりました！");
+            [greensmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            
+        }else if(CGRectContainsPoint(blueView.frame, greensmallView.center))
+        {
+            resultLabel.text = @"青と重なりました";
+            NSLog(@"緑:青と重なりました！");
+            [greensmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            
+        }else if(CGRectContainsPoint(greenView.frame,greensmallView.center))
+        {
+            resultLabel.text = @"緑と重なりました";
+            NSLog(@"緑:緑と重なりました！");
+            [greensmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            [self plusScore];
+        }else if(CGRectContainsPoint(yellowView.frame,greensmallView.center))
+        {
+            resultLabel.text = @"黄色と重なりました";
+            NSLog(@"緑:黄色と重なりました！");
+            [greensmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+        }
+        
+    }
+}
+
+//黄色
+- (void)panAction5:(UIPanGestureRecognizer *)sender
+{
+    CGPoint p = [sender translationInView:self.view];
+    
+    CGPoint movedPoint = CGPointMake(yellowsmallView.center.x + p.x, yellowsmallView.center.y + p.y);
+    
+    yellowsmallView.center = movedPoint;
+    
+    NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    
+    [sender setTranslation:CGPointZero inView:self.view];
+    
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        if (CGRectContainsPoint(redView.frame,yellowsmallView.center))
+            
+        {
+            resultLabel.text = @"赤と重なりました";
+            NSLog(@"黄色:赤と重なりました！");
+            [yellowsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            
+        }else if(CGRectContainsPoint(blueView.frame, yellowsmallView.center))
+        {
+            resultLabel.text = @"青と重なりました";
+            NSLog(@"黄色:青と重なりました！");
+            [yellowsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            
+        }else if(CGRectContainsPoint(greenView.frame,yellowsmallView.center))
+        {
+            resultLabel.text = @"緑と重なりました";
+            NSLog(@"黄色:緑と重なりました！");
+            [yellowsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+        }else if(CGRectContainsPoint(yellowView.frame,yellowsmallView.center))
+        {
+            resultLabel.text = @"黄色と重なりました";
+            NSLog(@"黄色:黄色と重なりました！");
+            [yellowsmallView removeFromSuperview];
+            [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
+            [self plusScore];
+        }
+        
     }
 }
 

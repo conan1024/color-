@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController<UIGestureRecognizerDelegate>{
     
-    IBOutlet UIView *redView, *blueView, *greenView, *yelloView
+    IBOutlet UIView *redView, *blueView, *greenView, *yellowView;
     
     IBOutlet UILabel *resultLabel;
     
@@ -18,7 +18,7 @@
     UIView *redsmallView;
     UIView *bluesmallView;
     UIView *greensmallView;
-    UIView *yellosmallView;
+    UIView *yellowsmallView;
     
     int number;
     int score;
@@ -35,7 +35,7 @@
 -(void)makered;
 -(void)makeblue;
 -(void)makegreen;
--(void)makeyello;
+-(void)makeyellow;
 -(void)random;
 -(void)plusScore;
 
