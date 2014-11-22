@@ -17,28 +17,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     [self random];
+    countDown = 60;
+    timer = [NSTimer
+             scheduledTimerWithTimeInterval:1
+             target: self
+             selector:@selector(TimerAction)
+             userInfo:nil
+             repeats:YES];
 
-
-
-//    blackView = [[UIView alloc]initWithFrame:CGRectMake(135,400,50,50)];
-//    
-//    blackView.backgroundColor = [UIColor blackColor];
-//    
-//    [self.view addSubview:blackView];
-//    
-//    UIPanGestureRecognizer *pan =
-//    [[UIPanGestureRecognizer alloc] initWithTarget:self
-//                                            action:@selector(panAction:)];
-//    
-//    [blackView addGestureRecognizer:pan];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)TimerAction{
+    if(countDown>0){
+        countDown--;
+        [timerlabel setText:[NSString stringWithFormat:@"%d",countDown]]; // ラベルに時間を表示
+    }else{
+        [timer invalidate]; // タイマーを停止する
+        NSLog(@"---------タイムオーバ-----------");
+    }
 }
 
 -(void)random{

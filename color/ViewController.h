@@ -13,6 +13,9 @@
     IBOutlet UIView *redView, *blueView, *greenView, *yellowView;
     
     IBOutlet UILabel *resultLabel;
+    NSTimer *timer; //クイズ中の経過時間を生成する
+    int countDown;  //設定時間
+    IBOutlet UILabel *timerlabel;
     
     UIView *blackView;
     UIView *redsmallView;
@@ -24,6 +27,8 @@
     int score;
     IBOutlet UILabel *scorelabel;
 }
+
+
 
 -(void)panAction:(UIPanGestureRecognizer *)sender;
 -(void)panAction2:(UIPanGestureRecognizer *)sender;
@@ -38,7 +43,6 @@
 -(void)makeyellow;
 -(void)random;
 -(void)plusScore;
-
 
 @end
 
