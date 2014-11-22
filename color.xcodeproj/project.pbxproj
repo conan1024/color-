@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9580ACA41A2087CD00A6BE49 /* KekkaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9580ACA31A2087CD00A6BE49 /* KekkaViewController.m */; };
 		958809BF1A1761B2006A8E1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 958809BE1A1761B2006A8E1C /* main.m */; };
 		958809C21A1761B2006A8E1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 958809C11A1761B2006A8E1C /* AppDelegate.m */; };
 		958809C51A1761B2006A8E1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958809C41A1761B2006A8E1C /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9580ACA21A2087CD00A6BE49 /* KekkaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KekkaViewController.h; sourceTree = "<group>"; };
+		9580ACA31A2087CD00A6BE49 /* KekkaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KekkaViewController.m; sourceTree = "<group>"; };
 		958809B91A1761B1006A8E1C /* color.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = color.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958809BD1A1761B1006A8E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958809BE1A1761B2006A8E1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				958809C91A1761B2006A8E1C /* Images.xcassets */,
 				958809CB1A1761B2006A8E1C /* LaunchScreen.xib */,
 				958809BC1A1761B1006A8E1C /* Supporting Files */,
+				9580ACA21A2087CD00A6BE49 /* KekkaViewController.h */,
+				9580ACA31A2087CD00A6BE49 /* KekkaViewController.m */,
 			);
 			path = color;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				958809C51A1761B2006A8E1C /* ViewController.m in Sources */,
 				958809C21A1761B2006A8E1C /* AppDelegate.m in Sources */,
+				9580ACA41A2087CD00A6BE49 /* KekkaViewController.m in Sources */,
 				958809BF1A1761B2006A8E1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +418,7 @@
 				958809DE1A1761B2006A8E1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		958809DF1A1761B2006A8E1C /* Build configuration list for PBXNativeTarget "colorTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				958809E11A1761B2006A8E1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

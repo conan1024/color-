@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="240" y="275"/>
         </scene>
-        <!--View Controller-->
+        <!--Kekka View Controller-->
         <scene sceneID="Gi7-ty-TwS">
             <objects>
-                <viewController id="Onh-No-FPE" sceneMemberID="viewController">
+                <viewController id="Onh-No-FPE" customClass="KekkaViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xr-sl-Hnw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
