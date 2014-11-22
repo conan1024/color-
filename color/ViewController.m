@@ -23,17 +23,17 @@
 
 
 
-    blackView = [[UIView alloc]initWithFrame:CGRectMake(135,400,50,50)];
-    
-    blackView.backgroundColor = [UIColor blackColor];
-    
-    [self.view addSubview:blackView];
-    
-    UIPanGestureRecognizer *pan =
-    [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(panAction:)];
-    
-    [blackView addGestureRecognizer:pan];
+//    blackView = [[UIView alloc]initWithFrame:CGRectMake(135,400,50,50)];
+//    
+//    blackView.backgroundColor = [UIColor blackColor];
+//    
+//    [self.view addSubview:blackView];
+//    
+//    UIPanGestureRecognizer *pan =
+//    [[UIPanGestureRecognizer alloc] initWithTarget:self
+//                                            action:@selector(panAction:)];
+//    
+//    [blackView addGestureRecognizer:pan];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +42,7 @@
 }
 
 -(void)random{
-    number=arc4random_uniform(2);
+    number=arc4random()%2;
     
     NSLog(@"%d",number);
     switch (number) {
@@ -64,7 +64,7 @@
     
     blackView.center = movedPoint;
     
-    NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    //NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
     
     [sender setTranslation:CGPointZero inView:self.view];
     
@@ -89,6 +89,7 @@
 }
 
 -(void)makered{
+    NSLog(@"make:red");
     redsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     
     redsmallView.backgroundColor = [UIColor redColor];
@@ -103,11 +104,12 @@
 }
 
 -(void)makeblue{
+    NSLog(@"make:blue");
     bluesmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     
     bluesmallView.backgroundColor = [UIColor blueColor];
     
-    [self.view addSubview:redsmallView];
+    [self.view addSubview:bluesmallView];
     
     UIPanGestureRecognizer *pan2 =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
@@ -118,6 +120,7 @@
 }
 
 -(void)plusScore{
+    NSLog(@"add score");
     score = score + 100;
     scorelabel.text = [NSString stringWithFormat:@"%d",score];
 }
@@ -130,16 +133,19 @@
     
     redsmallView.center = movedPoint;
     
-    NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    //NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
     
     [sender setTranslation:CGPointZero inView:self.view];
     
     if (sender.state == UIGestureRecognizerStateEnded)
     {
+        
+        
         if (CGRectContainsPoint(redView.frame,redsmallView.center))
             
         {
             resultLabel.text = @"赤と重なりました";
+            NSLog(@"赤:赤と重なりました！");
             [redsmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
             [self plusScore];
@@ -147,6 +153,7 @@
         }else if(CGRectContainsPoint(blueView.frame,redsmallView.center))
         {
             resultLabel.text = @"青と重なりました";
+            NSLog(@"赤:青と重なりました！");
             [redsmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
         }
@@ -161,7 +168,7 @@
     
     bluesmallView.center = movedPoint;
     
-    NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
+    //NSLog(@"⭐︎座標%@を移動中...⭐︎", NSStringFromCGPoint(movedPoint));
     
     [sender setTranslation:CGPointZero inView:self.view];
     
@@ -171,12 +178,14 @@
             
         {
             resultLabel.text = @"赤と重なりました";
+            NSLog(@"青:赤と重なりました！");
             [bluesmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
             
-        }else if(CGRectContainsPoint(blueView.frame,bluesmallView.center))
+        }else if(CGRectContainsPoint(blueView.frame, bluesmallView.center))
         {
             resultLabel.text = @"青と重なりました";
+            NSLog(@"青:赤と重なりました！");
             [bluesmallView removeFromSuperview];
             [self performSelector:@selector(random) withObject:nil afterDelay:0.5];
             [self plusScore];
