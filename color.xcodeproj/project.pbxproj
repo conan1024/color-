@@ -88,12 +88,12 @@
 				958809C11A1761B2006A8E1C /* AppDelegate.m */,
 				958809C31A1761B2006A8E1C /* ViewController.h */,
 				958809C41A1761B2006A8E1C /* ViewController.m */,
+				9580ACA21A2087CD00A6BE49 /* KekkaViewController.h */,
+				9580ACA31A2087CD00A6BE49 /* KekkaViewController.m */,
 				958809C61A1761B2006A8E1C /* Main.storyboard */,
 				958809C91A1761B2006A8E1C /* Images.xcassets */,
 				958809CB1A1761B2006A8E1C /* LaunchScreen.xib */,
 				958809BC1A1761B1006A8E1C /* Supporting Files */,
-				9580ACA21A2087CD00A6BE49 /* KekkaViewController.h */,
-				9580ACA31A2087CD00A6BE49 /* KekkaViewController.m */,
 			);
 			path = color;
 			sourceTree = "<group>";

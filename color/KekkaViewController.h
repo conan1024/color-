@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface KekkaViewController : UIViewController
+{
+    int number;
+    IBOutlet UILabel *label;
+}
+
+
 
 @end

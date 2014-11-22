@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "KekkaViewController.h"
 @interface ViewController ()
 
 @end
@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
     [self random];
+    
+    //カウントダウンの時間を設定
     countDown = 60;
     timer = [NSTimer
              scheduledTimerWithTimeInterval:1
@@ -25,8 +27,8 @@
              selector:@selector(TimerAction)
              userInfo:nil
              repeats:YES];
-
 }
+
 -(void)TimerAction{
     if(countDown>0){
         countDown--;
@@ -34,6 +36,10 @@
     }else{
         [timer invalidate]; // タイマーを停止する
         NSLog(@"---------タイムオーバ-----------");
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setInteger:100 forKey:@"KEY_I"]; 
+        KekkaViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Kekka"];
+        [self presentViewController:ViewController2 animated:YES completion:nil];
     }
 }
 
@@ -156,6 +162,7 @@
     NSLog(@"add score");
     score = score + 100;
     scorelabel.text = [NSString stringWithFormat:@"%d",score];
+   
 }
 //赤
 -(void)panAction2:(UIPanGestureRecognizer *)sender

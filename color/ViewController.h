@@ -28,8 +28,6 @@
     IBOutlet UILabel *scorelabel;
 }
 
-
-
 -(void)panAction:(UIPanGestureRecognizer *)sender;
 -(void)panAction2:(UIPanGestureRecognizer *)sender;
 -(void)panAction3:(UIPanGestureRecognizer *)sender;
@@ -43,6 +41,8 @@
 -(void)makeyellow;
 -(void)random;
 -(void)plusScore;
+
+
 
 @end
 
