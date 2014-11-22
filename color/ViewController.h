@@ -10,13 +10,15 @@
 
 @interface ViewController : UIViewController<UIGestureRecognizerDelegate>{
     
-    IBOutlet UIView *redView, *blueView;
+    IBOutlet UIView *redView, *blueView, *greenView, *yelloView
     
     IBOutlet UILabel *resultLabel;
     
     UIView *blackView;
     UIView *redsmallView;
     UIView *bluesmallView;
+    UIView *greensmallView;
+    UIView *yellosmallView;
     
     int number;
     int score;
@@ -25,9 +27,15 @@
 
 -(void)panAction:(UIPanGestureRecognizer *)sender;
 -(void)panAction2:(UIPanGestureRecognizer *)sender;
+-(void)panAction3:(UIPanGestureRecognizer *)sender;
+-(void)panAction4:(UIPanGestureRecognizer *)sender;
+-(void)panAction5:(UIPanGestureRecognizer *)sender;
+
 
 -(void)makered;
 -(void)makeblue;
+-(void)makegreen;
+-(void)makeyello;
 -(void)random;
 -(void)plusScore;
 

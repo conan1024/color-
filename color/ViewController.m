@@ -96,11 +96,11 @@
     
     [self.view addSubview:redsmallView];
     
-    UIPanGestureRecognizer *pan3 =
+    UIPanGestureRecognizer *pan2 =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(panAction3:)];
+                                            action:@selector(panAction2:)];
     
-    [redsmallView addGestureRecognizer:pan3];
+    [redsmallView addGestureRecognizer:pan2];
 }
 
 -(void)makeblue{
@@ -111,13 +111,43 @@
     
     [self.view addSubview:bluesmallView];
     
-    UIPanGestureRecognizer *pan2 =
+    UIPanGestureRecognizer *pan3 =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(panAction2:)];
+                                            action:@selector(panAction3:)];
     
-    [bluesmallView addGestureRecognizer:pan2];
-
+    [bluesmallView addGestureRecognizer:pan3];
 }
+
+-(void)makegreen{
+    NSLog(@"make:green");
+    greensmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    
+    greensmallView.backgroundColor = [UIColor greenColor];
+    
+    [self.view addSubview:greensmallView];
+    
+    UIPanGestureRecognizer *pan4 =
+    [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(panAction4:)];
+    
+    [redsmallView addGestureRecognizer:pan4];
+}
+
+-(void)makeyello{
+    NSLog(@"make:yello");
+    redsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    
+    redsmallView.backgroundColor = [UIColor yelloColor];
+    
+    [self.view addSubview:redsmallView];
+    
+    UIPanGestureRecognizer *pan5 =
+    [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(panAction5:)];
+    
+    [redsmallView addGestureRecognizer:pan5];
+}
+
 
 -(void)plusScore{
     NSLog(@"add score");
@@ -125,7 +155,7 @@
     scorelabel.text = [NSString stringWithFormat:@"%d",score];
 }
 
--(void)panAction3:(UIPanGestureRecognizer *)sender
+-(void)panAction2:(UIPanGestureRecognizer *)sender
 {
     CGPoint p = [sender translationInView:self.view];
     
@@ -160,7 +190,7 @@
     }
 }
 
-- (void)panAction2:(UIPanGestureRecognizer *)sender
+- (void)panAction3:(UIPanGestureRecognizer *)sender
 {
     CGPoint p = [sender translationInView:self.view];
     
