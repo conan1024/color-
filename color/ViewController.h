@@ -20,7 +20,7 @@
     IBOutlet UILabel *timerlabel;
     
     UIView *blackView;
-    UIView *redsmallView;
+    UIImageView *redsmallView;
     UIView *bluesmallView;
     UIView *greensmallView;
     UIView *yellowsmallView;

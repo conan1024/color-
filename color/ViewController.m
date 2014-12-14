@@ -15,6 +15,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
     [self random];
@@ -65,6 +66,27 @@
     }
 }
 
+-(void)random{
+    number=arc4random()%4;
+    
+    NSLog(@"%d",number);
+    switch (number) {
+        case 0:
+            [self "red1.png"];
+            break;
+        case 1:
+            [self makeblue];
+            break;
+        case 2:
+            [self makegreen];
+            break;
+        case 3:
+            [self makeyellow];
+            break;
+    }
+}
+
+
 //タッチを検出し、blackviewを移動するメソッドの設定
 -(void)panAction:(UIPanGestureRecognizer *)sender
 {
@@ -107,10 +129,15 @@
 //redsmallviewを発生させる
 -(void)makered{
     NSLog(@"make:red");
-    redsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    redsmallView = [[UIImageView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     //UIViewの生成・CGRectMakeで座標位置と大きさを指定(x座標・y座標・横幅・高さ)
     
-    redsmallView.backgroundColor = [UIColor redColor];
+     redsmallView.image = [UIImage imageNamed:@"red1.png"];
+     redsmallView.image = [UIImage imageNamed:@"red2.png"];
+     redsmallView.image = [UIImage imageNamed:@"red3.png"];
+     redsmallView.image = [UIImage imageNamed:@"red4.png"];
+    
+    //redsmallView.backgroundColor = [UIColor redColor];
     //色を赤にする
     [self.view addSubview:redsmallView];
     //画面のviewに追加する
@@ -124,7 +151,7 @@
 //biuesmallviewを発生させる
 -(void)makeblue{
     NSLog(@"make:blue");
-    bluesmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    bluesmallView = [[UIImageView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     //UIViewの生成・CGRectMakeで座標位置と大きさを指定(x座標・y座標・横幅・高さ)
     
     bluesmallView.backgroundColor = [UIColor blueColor];
@@ -144,7 +171,7 @@
 //greensmallviewを発生させる
 -(void)makegreen{
     NSLog(@"make:green");
-    greensmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    greensmallView = [[UIImageView alloc] initWithFrame:CGRectMake(135,400,50,50)];
      //UIViewの生成・CGRectMakeで座標位置と大きさを指定(x座標・y座標・横幅・高さ)
     
     greensmallView.backgroundColor = [UIColor greenColor];
@@ -164,7 +191,7 @@
 //yellowsmallviewを発生させる
 -(void)makeyellow{
     NSLog(@"make:yellow");
-    yellowsmallView = [[UIView alloc] initWithFrame:CGRectMake(135,400,50,50)];
+    yellowsmallView = [[UIImageView alloc] initWithFrame:CGRectMake(135,400,50,50)];
     //UIViewの生成・CGRectMakeで座標位置と大きさを指定(x座標・y座標・横幅・高さ)
     
     yellowsmallView.backgroundColor = [UIColor yellowColor];
@@ -172,8 +199,6 @@
     [self.view addSubview:yellowsmallView];
     //画面のviewに追加している
 
-    
-    
     UIPanGestureRecognizer *pan5 =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(panAction5:)];
