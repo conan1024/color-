@@ -20,7 +20,7 @@
     IBOutlet UILabel *timerlabel;
     
     UIView *blackView;
-    UIImageView *redsmallView;
+    UIView *redsmallView;
     UIView *bluesmallView;
     UIView *greensmallView;
     UIView *yellowsmallView;
@@ -29,18 +29,6 @@
     int score;//点数を管理する
     IBOutlet UILabel *scorelabel;//点数表示label
 }
-
--(void)panAction:(UIPanGestureRecognizer *)sender;
--(void)panAction2:(UIPanGestureRecognizer *)sender;
-//UIPanGestureRecognizerを増やす
--(void)panAction3:(UIPanGestureRecognizer *)sender;
-//UIPanGestureRecognizerを増やす
--(void)panAction4:(UIPanGestureRecognizer *)sender;
-//UIPanGestureRecognizerを増やす
--(void)panAction5:(UIPanGestureRecognizer *)sender;
-//UIPanGestureRecognizerを増やす
-
-
 
 -(void)makered;
 -(void)makeblue;

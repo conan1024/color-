@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import GoogleMobileAds;
 @interface KekkaViewController : UIViewController
 {
+    GADInterstitial *interstitial_;
     int number;
     IBOutlet UILabel *label;
 }
